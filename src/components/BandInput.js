@@ -17,20 +17,20 @@ class BandInput extends Component {
   }
   handleSubmit = event => {
     event.preventDefault()
-    this.props.dispatch({ type: 'ADD_BAND', payload: this.state})
+    this.props.addBand(this.state)
   }
   
   render() {
     return(
       <div>
         <form onSubmit={event => this.handleSubmit(event)}> 
-        <label> Band name </label>
-        <input onChange={this.onChange} value={this.state.text} type="text"></input>
-        <input type="submit" /> 
+          <label> Band name </label>
+          <input onChange={this.onChange} value={this.state.text} type="text"></input>
+          <input type="submit" /> 
         </form> 
       </div>
     )
   }
 }
 
-export default connect()(BandInput);
+export default BandInput
